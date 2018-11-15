@@ -1,0 +1,26 @@
+package com.fcc.crud.test;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.fcc.crud.dao.userInfoMapper;
+@RunWith(SpringJUnit4ClassRunner.class )
+@ContextConfiguration(locations={"classpath:applicationContext.xml"})
+
+public class mapper {
+	@Autowired
+	
+	
+	@Test
+	public void test(){
+		ApplicationContext ioc = new ClassPathXmlApplicationContext("applicationContext.xml");
+		userInfoMapper bean = ioc.getBean(userInfoMapper.class);
+		System.out.println(bean);
+	}
+
+}
