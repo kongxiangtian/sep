@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  
+
+  <context id="DB2Tables" targetRuntime="MyBatis3">
+  <commentGenerator>
+  <property name="suppressAllComments" value="true" />
+</commentGenerator>
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://localhost:3306/weekreport"
+        userId="root"
+        password="000000">
+    </jdbcConnection>
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+    <javaModelGenerator targetPackage="com.fcc.crud.bean" 
+    targetProject=".\src\main\java">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="mapper" 
+     targetProject=".\src\main\resources">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.fcc.crud.dao"
+      targetProject=".\src\main\java">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+     <table tableName="userinfo" domainObjectName="userInfo"></table>
+      <table tableName="everyreport" domainObjectName="everyReport"></table>
+        <table tableName="sharereport" domainObjectName="shareReport"></table>
+         <table tableName="scoreinfo" domainObjectName="scoreInfo"></table>
+          <table tableName="teacherinfo" domainObjectName="teacherInfo"></table>
+            <table tableName="statistics" domainObjectName="statistics"></table>
+             <table tableName="mynews" domainObjectName="myNews"></table>
+  </context>
+</generatorConfiguration>
